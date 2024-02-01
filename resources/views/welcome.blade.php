@@ -51,13 +51,13 @@
     <form action="pridat-chovatele" method="post">
         @csrf
         <label for="jmeno">Jmeno</label>
-        <input type="text" name="jmeno-chovatele" id="jmeno" value="">
+        <input type="text" name="jmeno-chovatele" id="jmeno" value="{{ old('jmeno-chovatele') }}">
 
         <label for="email">Email</label>
-        <input type="email" name="email-chovatele" id="email">
+        <input type="email" name="email-chovatele" id="email" value="{{ old('email-chovatele')}}">
 
         <label for="plat">Plat</label>
-        <input type="number" name="plat-chovatele" id="plat" min="0">
+        <input type="number" name="plat-chovatele" id="plat" min="0" value="{{ old('plat-chovatele') }}">
 
         <input type="submit" value="Pridat chovatele">
     </form>

@@ -26,17 +26,16 @@ class HomeController extends Controller
         $email = $formular->input("email-chovatele");
         $plat = $formular->input("plat-chovatele");
 
+        //pokud zde vznikne chyba, tak nas laravel presmeruje zpatky na stranky, kde byl formular
         $validated = $formular->validate([
             'jmeno-chovatele' => 'required|max:255|min:3',
             'email-chovatele' => 'required|max:255|min:3|email',
             'plat-chovatele' => 'required|integer'
         ]);
 
-        if ($validated == true) {
-            return "vse ok";
-        }else{
-            
-        }
+        //pokud se dostenme sem, tak to zname ze vse probehlo dobre
+        return "VSE OK!!!";
+        
 
     }
 

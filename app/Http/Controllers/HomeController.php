@@ -41,7 +41,7 @@ class HomeController extends Controller
         ]);
 
         //pokud se dostenme sem, tak to zname ze vse probehlo dobre
-        return "VSE OK!!!";
+        return redirect("/")->with("zprava", "Vse OK!");
     }
 
     function smazatChovatele($id) {
@@ -55,6 +55,22 @@ class HomeController extends Controller
         $polePromennych["chovatel"] = $chovatel;
 
         return view("editorChovatelu", $polePromennych);
+    }
+
+    function aktualizovatChovatele($id, Request $formular) {
+        $poleInputu = $formular->validate([
+            'jmeno-chovatele' => 'required|max:255|min:3',
+            'email-chovatele' => 'required|max:255|min:3|email',
+            'plat-chovatele' => 'required|integer'
+        ]);
+        
+        $chovatel = Model_chovatel::find($id);
+        $chovatel->jmeno = $poleInputu["jmeno-chovatele"];
+        $chovatel->email = $poleInputu["email-chovatele"];
+        $chovatel->plat = $poleInputu["plat-chovatele"];
+        $chovatel->save();
+
+        return redirect("/");
     }
 
 } //endHomeController

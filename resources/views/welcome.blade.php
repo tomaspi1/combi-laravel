@@ -65,6 +65,14 @@
     </div>
     @endif
 
+    @if (\Session::has('zprava'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('zprava') !!}</li>
+        </ul>
+    </div>
+    @endif
+
     <form action="pridat-chovatele" method="post">
         @csrf
         <label for="jmeno">Jmeno</label>

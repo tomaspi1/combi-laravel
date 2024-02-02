@@ -9,16 +9,16 @@
 <body>
     <h1>Editor chovatelu</h1>
 
-    <form action="" method="post">
+    <form action="/aktualizovat-chovatele/{{$chovatel->id}}" method="post">
         @csrf
         <label for="">Jmeno: </label>
-        <input type="text" name="" id="">
+        <input type="text" name="jmeno-chovatele" id="" value="{{$chovatel->jmeno}}">
         <br>
         <label for="">Email: </label>
-        <input type="email" name="" id="">
+        <input type="email" name="email-chovatele" id="" value="{{$chovatel->email}}">
         <br>
         <label for="">Plat: </label>
-        <input type="number" name="" id="" min="0">
+        <input type="number" name="plat-chovatele" id="" min="0" value="{{$chovatel->plat}}">
         <br>
         <input type="submit" value="Aktualizovat">
     </form>

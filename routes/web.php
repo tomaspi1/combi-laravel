@@ -18,3 +18,4 @@ Route::get('/', [HomeController::class, 'index']);
 Route::post('pridat-chovatele', [HomeController::class, 'pridatChovatele']);
 Route::get('smazat-chovatele/{id}', [HomeController::class, 'smazatChovatele']);
 Route::get('editovat-chovatele/{id}', [HomeController::class, 'editovatChovatele']);
+Route::post('aktualizovat-chovatele/{id}', [HomeController::class, 'aktualizovatChovatele']);

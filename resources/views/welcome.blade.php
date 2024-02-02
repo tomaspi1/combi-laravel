@@ -24,12 +24,18 @@
             <th>Jmeno chovatele</th>
             <th>Plat</th>
             <th>Email</th>
+            <th>Operace</th>
         </tr>
         @foreach($chovatele as $chovatel)
         <tr>
             <td>{{$chovatel->jmeno}}</td>
             <td>{{$chovatel->plat}}</td>
             <td>{{$chovatel->email}}</td>
+            <td>
+                <a href="smazat-chovatele/{{$chovatel->id}}">Smazat</a>
+                <br>
+                <a href="editovat-chovatele/{{$chovatel->id}}">Editovat</a>
+            </td>
         </tr>
         @endforeach
     </table>
